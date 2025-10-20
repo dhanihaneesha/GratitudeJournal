@@ -1,0 +1,58 @@
+{% extends "base.html" %} {% block title %}New Entry - Gratitude Journal{%
+endblock %} {% block content %}
+<h2 style="margin-bottom: 30px; color: #2d3748">Create New Journal Entry</h2>
+
+<form method="POST" action="{{ url_for('new_entry') }}">
+  <div class="form-group">
+    <label for="category">Journal Section</label>
+    <select name="category" id="category" required>
+      <option value="">Choose a section...</option>
+      {% for category in categories %}
+      <option value="{{ category }}">{{ category }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input
+      type="text"
+      name="title"
+      id="title"
+      placeholder="Give your entry a title..."
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="content">Your Thoughts</label>
+    <textarea
+      name="content"
+      id="content"
+      placeholder="Write your thoughts, feelings, ideas, or reflections here..."
+      required
+    ></textarea>
+  </div>
+
+  <button type="submit" class="btn">Save Entry</button>
+</form>
+
+<div
+  style="
+    margin-top: 30px;
+    padding: 20px;
+    background: #f0f4f8;
+    border-radius: 10px;
+  "
+>
+  <h3 style="color: #2d3748; margin-bottom: 15px">Journaling Tips</h3>
+  <ul style="color: #4a5568; line-height: 2">
+    <li><strong>Gratitude:</strong> What are you thankful for today?</li>
+    <li><strong>Ideas:</strong> Capture creative thoughts and inspirations</li>
+    <li><strong>Feelings:</strong> Express your emotions and mental state</li>
+    <li>
+      <strong>Work Notes:</strong> Document work achievements and learnings
+    </li>
+  </ul>
+</div>
+{% endblock %}

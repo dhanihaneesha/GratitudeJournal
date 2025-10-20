@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% block title %}{{ entry.title }} - Gratitude
+Journal{% endblock %} {% block content %}
+<a
+  href="{{ url_for('history') }}"
+  class="view-link"
+  style="margin-bottom: 20px; display: inline-block"
+>
+  ← Back to History
+</a>
+
+<div class="entry-detail">
+  <h2>{{ entry.title }}</h2>
+
+  <div class="meta-info">
+    <span
+      class="category-badge category-{{ entry.category.lower().replace(' ', '-') }}"
+    >
+      {{ entry.category }}
+    </span>
+    <span style="color: #718096">
+      {{ entry.date.strftime('%A, %B %d, %Y at %I:%M %p') }}
+    </span>
+  </div>
+
+  <div class="content">{{ entry.content }}</div>
+</div>
+
+<div style="margin-top: 30px; text-align: center">
+  <a href="{{ url_for('new_entry') }}" class="btn">Write Another Entry</a>
+</div>
+{% endblock %}
