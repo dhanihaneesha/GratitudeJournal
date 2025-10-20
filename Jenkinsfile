@@ -23,7 +23,7 @@ pipeline {
             steps {
                 echo "Pushing Docker image to Dockerhub..."
                 // Correct tag format: username/repo:tag
-                bat "docker tag kubedemo:v1 dhanihaneesha/journal-app:v1"
+                bat "docker tag journal-app:v1 dhanihaneesha/journal-app:v1"
                 bat "docker push dhanihaneesha/journal-app:v1"
             }
         }
@@ -37,3 +37,4 @@ pipeline {
         }
     }
 }
+
