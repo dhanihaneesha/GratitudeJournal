@@ -7,7 +7,8 @@ spec:
     app: journal-app # must match deployment labels
   ports:
     - protocol: TCP
-      port: 5000 # Service port (external access)
-      targetPort: 5000 # Flask app port inside container
-      nodePort: 30080 # NodePort (range 30000-32767)
+      port: 5000 
+      targetPort: 5000 
+      nodePort: 30081
   type: NodePort
+
