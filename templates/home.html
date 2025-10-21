@@ -1,9 +1,6 @@
 {% extends "base.html" %} {% block title %}Home - Gratitude Journal{% endblock
 %} {% block content %}
-<div class="prompt-box">
-  <h2>Today's Reflection Prompt</h2>
-  <p>"{{ daily_prompt }}"</p>
-</div>
+
 
 <div class="stats-grid">
   <div class="stat-card">
@@ -51,8 +48,8 @@
 </div>
 {% else %}
 <div class="empty-state">
-  <h2>No entries yet</h2>
-  <p>Start your journaling journey by creating your first entry!</p>
+  
+  
   <br />
   <a href="{{ url_for('new_entry') }}" class="btn">Create Your First Entry</a>
 </div>
